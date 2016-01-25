@@ -12,7 +12,7 @@ package com.example.evenodd;
 public class EvenOdd {
 
     public static void main(String[] args) {
-
+//added test comment
         //create an array of 10 numbers
         int[] numbers = new int[]{1,2,3,4,5,6,7,8,9,10};
 
