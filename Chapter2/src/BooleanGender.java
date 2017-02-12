@@ -5,8 +5,6 @@ import  java.util.Scanner;
 
 public class BooleanGender {
     public static void main (String [] args) {
-        /*Декларирайте променлива isMale от тип boolean и присвоете стойност
-        на последната в зависимост от вашия пол. */
         boolean isMale ;
         String genre;
         Scanner in = new Scanner(System.in);
