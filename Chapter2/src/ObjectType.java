@@ -4,7 +4,7 @@
 public class ObjectType {
     public static void main (String args []) {
         //Declare variables
-        Object container = 5;
+        Object container = "5";
         Object container2 = "Five";
         //Print result to the console
         System.out.println("The value of container is " + container);
