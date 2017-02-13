@@ -30,9 +30,6 @@ public class FourDigitNumber {
             System.out.println("Print digits in reverse order: " + digit4 + digit3 + digit2 + digit1);
             System.out.println("Print last in first: " + digit4 + digit1 + digit2 + digit3);
             System.out.println("Swap second and third digit: " + digit1 + digit3 + digit2 + digit4);
-
-
         }
-
     }
 }
