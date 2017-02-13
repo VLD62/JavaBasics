@@ -18,13 +18,13 @@ public class CheckPointCircleRectangle {
         }
         //Check for the point if it is inside the circle and rectangle
             boolean firstCase = Math.sqrt(x * x + y * y) <= 5; // First Condition
-            boolean secondCase = ((x > -1 || x < 1 || y < 5) && y > 0) ; // Second Condition
+            boolean secondCase = ((x < -1 || x > 1 || y > 5) && y < 0) ; // Second Condition
 
             boolean resultThree = firstCase && secondCase;
             if (resultThree) {
-                System.out.println("Point is inside the circle K and rectangular");
+                System.out.println("Point is inside the circle K and outside rectangular.");
             } else {
-                System.out.println("Point is outside the circle K and rectangular");
+                System.out.println("Point is outside the circle K and inside rectangular.");
               }
         }
 
