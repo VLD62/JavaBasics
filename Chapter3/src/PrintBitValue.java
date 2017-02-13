@@ -25,12 +25,15 @@ public class PrintBitValue {
             char bitA = binaryIntInStr.charAt(p);
             System.out.println("Binary value of bit number " + p +" is: " + bitA);
             String binaryIntInStr2 = Integer.toBinaryString(n);
-            char[] newBinary = binaryIntInStr2.toCharArray();
+            String reversedbinaryIntInStr2 = new StringBuffer(binaryIntInStr2).reverse().toString();
+            char[] newBinary = reversedbinaryIntInStr2.toCharArray();
             newBinary[p] = vChar;
-            binaryIntInStr2 = String.valueOf(newBinary);
+            reversedbinaryIntInStr2 = String.valueOf(newBinary);
+            String binaryIntInStr3 = new StringBuffer(reversedbinaryIntInStr2).reverse().toString();
             System.out.println("New binary value of bit number " + p + " was changed with value of "
-                   + v + " and new value is " +  binaryIntInStr2);
-
+                   + v + " and new value is " +  binaryIntInStr3);
+            int newNumber = Integer.parseInt(binaryIntInStr3, 2);
+            System.out.println("New number is: " + newNumber);
         } else {
             System.out.println("Specified value is different than 0 or 1: ");
         }
