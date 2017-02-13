@@ -7,6 +7,7 @@ public class ObjectType {
         Object container = "5";
         Object container2 = "Five";
         //Print result to the console
+
         System.out.println("The value of container is " + container);
         System.out.println("The value of container2 is " + container2);
 
