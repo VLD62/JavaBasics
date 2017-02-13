@@ -15,7 +15,9 @@ public class CheckPointCircleRectangle {
             System.out.println("Point is inside the circle K.");
         } else {
             System.out.println("Point is outside the circle K.");
+
         }
+
 
     }
 }
