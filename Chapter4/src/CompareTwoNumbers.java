@@ -5,16 +5,14 @@ import java.util.Scanner;
  */
 public class CompareTwoNumbers {
     public static void main (String [] args){
-        int v,x,y,z,max;
+        int x,y;
+        double max2;
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter first number: ");
         x = in.nextInt();
-        System.out.println("Please enter first number: ");
+        System.out.println("Please enter second number: ");
         y =  in.nextInt();
-        v = (x - y);
-        z = (v >> 1) & 0x1;
-        max = x - (z * v);
-
-        System.out.println("Bigger number is: "+max);
+        max2 = ((x+y) + (Math.sqrt(Math.pow(x-y, 2))))/2;
+        System.out.println("Double check bigger number is: " + (int)(max2));
     }
 }
