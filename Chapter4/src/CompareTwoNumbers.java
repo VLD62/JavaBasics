@@ -13,6 +13,6 @@ public class CompareTwoNumbers {
         System.out.println("Please enter second number: ");
         y =  in.nextInt();
         max2 = ((x+y) + (Math.sqrt(Math.pow(x-y, 2))))/2;
-        System.out.println("Double check bigger number is: " + (int)(max2));
+        System.out.println("Bigger number is: " + (int)(max2));
     }
 }
