@@ -9,10 +9,10 @@ public class CheckSignOfQuotient {
     Scanner in = new Scanner(System.in);
     System.out.println("Input first number: ");
     a =in.nextInt();
-    System.out.println("Input first number: ");
+    System.out.println("Input second number: ");
     b =in.nextInt();
 
-    if (a>0 && b >0) {
+    if (a > 0 && b > 0) {
         System.out.println("Quotient is positive.");
     }
     else if (a < 0 && b > 0){
@@ -21,7 +21,7 @@ public class CheckSignOfQuotient {
     else if (a > 0 && b < 0) {
             System.out.println("Quotient is negative.");
     }
-    else if (a < 0 && b > 0) {
+    else if (a < 0 && b < 0) {
           System.out.println("Quotient is positive.");
     }
 
