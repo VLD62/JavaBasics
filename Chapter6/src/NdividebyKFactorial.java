@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * Created by vld62 on 2/18/17.
  */
-public class NdividebyK {
+public class NdividebyKFactorial {
     public static void main (String [] args){
         int N,K,M,x;
         int factorialN = 1, factorialM = 1, factorialK = 1;
