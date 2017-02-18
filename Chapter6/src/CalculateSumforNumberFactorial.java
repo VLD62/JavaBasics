@@ -5,7 +5,7 @@ import java.util.Scanner;
  */
 public class CalculateSumforNumberFactorial {
     public static void main (String [] args){
-    int N,x,factorialN = 1;
+    long N,x,factorialN = 1;
     double K,sqrX,S = 0;
     Scanner in = new Scanner(System.in);
     System.out.println("Enter number N: ");

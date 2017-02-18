@@ -5,7 +5,7 @@ import java.util.Scanner;
  */
 public class ZeroesInFactorial {
     public static void main (String [] args){
-        int N,factorialN = 1,zeroes = 0;
+        long N,factorialN = 1,zeroes = 0;
         Scanner in = new Scanner(System.in);
         System.out.println("Enter number N: ");
         N = in.nextInt();
