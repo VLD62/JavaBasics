@@ -3,10 +3,10 @@ import java.util.Scanner;
 
 /**
  * Created by viliev on 21.2.2017 г..
- * Напишете програма, която намира максималната редица от еднакви елементи в масив.
- * Пример: {2, 1, 1, 2, 3, 3, 2, 2, 2, 1}  {2, 2, 2}.
+ * Напишете програма, която намира максималната редица от нарастващи елементи в масив.
+ * Пример: {3, 2, 3, 4, 2, 2, 4}  {2, 3, 4}.
  */
-public class FindMaximumEqualNumbersInArray {
+public class FindMaxIncreasingNumbersInArray {
     public static void main (String [] Args){
         int N,x,length = 1,maxlength = 0;
         Scanner in = new Scanner(System.in);
@@ -25,7 +25,7 @@ public class FindMaximumEqualNumbersInArray {
             while(Array[i] == Array [i-1]){
                 length++;
                 i++;
-                if (i == Array.length){
+                if (i > Array.length){
                     break;
                 }
             }
@@ -34,7 +34,7 @@ public class FindMaximumEqualNumbersInArray {
                 value = Array[i-1];
             }
         }
-        System.out.print("Line of equal elements is : ");
+        System.out.print("Max line of increasing elements is : ");
         for (int i = 0; i < maxlength - 1; i++) {
             System.out.print(value + ", ");
         }
