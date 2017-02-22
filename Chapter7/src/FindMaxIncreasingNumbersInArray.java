@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class FindMaxIncreasingNumbersInArray {
     public static void main (String [] Args){
-        int N,x,length = 1,maxlength = 0;
+        int N,x,start = 0, lenght = 1, bestStart = 0, bestLenght = 1;
         Scanner in = new Scanner(System.in);
         System.out.println("Enter maximum numbers in array: ");
         N = in.nextInt();
@@ -19,26 +19,24 @@ public class FindMaxIncreasingNumbersInArray {
             Array[i] = x;
         }
         System.out.println("Elements of Array are: " + Arrays.toString(Array));
-        int value = Array[0];
-        for (int i= 1; i < Array.length; i++) {
-            length = 1;
-            while(Array[i] == Array [i-1]){
-                length++;
-                i++;
-                if (i > Array.length){
-                    break;
+        for (int i = 1; i < Array.length ; i++){
+            if (Array[i] > Array [i - 1])
+            {
+                start = i;
+                lenght++;
+                if (bestLenght < lenght)
+                {
+                    bestStart = start;
+                    bestLenght = lenght;
                 }
-            }
-            if(maxlength < length) {
-                maxlength = length;
-                value = Array[i-1];
+            } else {
+                lenght = 1;
             }
         }
-        System.out.print("Max line of increasing elements is : ");
-        for (int i = 0; i < maxlength - 1; i++) {
-            System.out.print(value + ", ");
+        for (int j = bestStart - bestLenght + 1; j <= bestStart; j++){
+            System.out.println(Array[j] + " ");
         }
-        System.out.println(value + ".");
+        System.out.println();
 
     }
 }
