@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class CustomMatrixBiggestSumIn3x3 {
     public static void main (String [] args){
         Scanner in = new Scanner(System.in);
-        int rows, cols, rowsValue, colsValue;
+        int rows, cols, rowsValue, colsValue, sum = Integer.MIN_VALUE;
         System.out.println("Enter number of rows of the matrix:");
         rows = in.nextInt();
         System.out.println("Enter number of columns of the matrix:");
@@ -35,23 +35,23 @@ public class CustomMatrixBiggestSumIn3x3 {
         for (int tempRow = 0; tempRow < matrix.length - 2; tempRow++)
             for (int tempCol = 0; tempCol < matrix[0].length - 2; tempCol++)
             {
-                int tempSum = matrix[row, col] + matrix[row, col + 1] + matrix[row, col + 2] +
-                    matrix[row + 1, col] + matrix[row + 1, col + 1] + matrix[row + 1, col + 2] +
-                    matrix[row + 2, col] + matrix[row + 2, col + 1] + matrix[row + 2, col + 2];
+                int tempSum = matrix[tempRow][tempCol] + matrix[tempRow][tempCol + 1] + matrix[tempRow][tempCol + 2] +
+                    matrix[tempRow + 1][tempCol] + matrix[tempRow + 1][tempCol + 1] + matrix[tempRow + 1][tempCol + 2] +
+                    matrix[tempRow + 2][tempCol] + matrix[tempRow + 2][tempCol + 1] + matrix[tempRow + 2][tempCol + 2];
 
                 if (tempSum > sum)
                 {
-                    row = tempRow;
-                    col = tempCol;
+                    rows = tempRow;
+                    cols = tempCol;
                     sum = tempSum;
                 }
             }
 
-        Console.WriteLine("Result");
-        Console.WriteLine("{0} {1} {2}", matrix[row, col], matrix[row, col + 1], matrix[row, col + 2]);
-        Console.WriteLine("{0} {1} {2}", matrix[row + 1, col], matrix[row + 1, col + 1], matrix[row + 1, col + 2]);
-        Console.WriteLine("{0} {1} {2}", matrix[row + 2, col], matrix[row + 2, col + 2], matrix[row + 2, col + 2]);
-        Console.WriteLine("The maximum sum is {0}.", sum);
+        System.out.println("Result");
+        System.out.println("["+matrix[rows][cols] + "] [" + matrix[rows][cols + 1] + "] [" + matrix[rows][cols + 2] + "]");
+        System.out.println("["+matrix[rows + 1][cols]+ "] [" + matrix[rows + 1][cols + 1]+ "] [" +  matrix[rows + 1][cols + 2] + "]");
+        System.out.println("["+matrix[rows + 2][cols]+ "] [" + matrix[rows + 2][cols + 2]+ "] [" + matrix[rows + 2][cols + 2] + "]");
+        System.out.println("The maximum sum is :" + sum);
 
 
     }
