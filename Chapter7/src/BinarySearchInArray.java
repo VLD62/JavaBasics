@@ -4,7 +4,7 @@ import java.util.Arrays;
  * Created by viliev on 27.2.2017 г..
  * Да се реализира двоично търсене (binary search) в сортиран целочислен масив.
  */
-public class BinarySearchInTwoDimensionArray {
+public class BinarySearchInArray {
     public static void main (String [] args){
         Scanner in = new Scanner(System.in);
         int length, number, index;
