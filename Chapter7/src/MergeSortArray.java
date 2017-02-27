@@ -26,7 +26,7 @@ public class MergeSortArray {
         //Call merge sort
         mergeSort(newArray);
         //Output of sorted array
-        System.out.println(Arrays.toString(newArray));
+        System.out.println("Sorted Array is " + Arrays.toString(newArray));
     }
 
     public static Comparable[] mergeSort(Comparable[] list)
