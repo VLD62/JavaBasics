@@ -1,94 +1,81 @@
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by viliev on 27.2.2017 г..
  * Напишете програма, която сортира целочислен масив по алгоритъма "merge sort".
  */
 public class MergeSortArray {
-    public static void main (String [] args){
+    public static void main (String [] args) {
+       //Creation of user input based unsorted array
         Scanner in = new Scanner(System.in);
         int length;
         System.out.println("Enter array length: ");
         length = in.nextInt();
-
-
         int[] Array = new int[length];
-
-        for (int i = 0; i < length; i++)
-        {
+        for (int i = 0; i < length; i++) {
             System.out.println("Enter " + i + " element of the Array.");
             Array[i] = in.nextInt();
         }
-
-        System.out.println("Array is "+ Arrays.toString(Array));
-
-
-        mergeSort(Array);
-
-        System.out.println("Sorted Array is "+ Arrays.toString(Array));
-        for (int j = 0; j < Array.length; j++) {
-            System.out.println(Array[j]);
+        Integer[] newArray = new Integer[Array.length];
+        int i = 0;
+        for (int value : Array) {
+            newArray[i++] = Integer.valueOf(value);
         }
 
+        System.out.println("Array is " + Arrays.toString(Array));
+        //Call merge sort
+        mergeSort(newArray);
+        //Output of sorted array
+        System.out.println(Arrays.toString(newArray));
     }
 
-    static void mergeSort(int[] A) {
-        if (A.length > 1) {
-            int q = A.length/2;
-
-    //changed range of leftArray from 0-to-q to 0-to-(q-1)
-            int[] leftArray = Arrays.copyOfRange(A, 0, q-1);
-    //changed range of rightArray from q-to-A.length to q-to-(A.length-1)
-            int[] rightArray = Arrays.copyOfRange(A,q,A.length-1);
-
-            mergeSort(leftArray);
-            mergeSort(rightArray);
-
-            merge(A,leftArray,rightArray);
+    public static Comparable[] mergeSort(Comparable[] list)
+    {
+        //If list is empty; no need to do anything
+        if (list.length <= 1) {
+            return list;
         }
-    }
 
-    static void merge(int[] a, int[] l, int[] r) {
-        int totElem = l.length + r.length;
-        //int[] a = new int[totElem];
-        int i,li,ri;
-        i = li = ri = 0;
-        while ( i < totElem) {
-            if ((li < l.length) && (ri<r.length)) {
-                if (l[li] < r[ri]) {
-                    a[i] = l[li];
-                    i++;
-                    li++;
-                }
-                else {
-                    a[i] = r[ri];
-                    i++;
-                    ri++;
-                }
+        //Split the array in half in two parts
+        Comparable[] first = new Comparable[list.length / 2];
+        Comparable[] second = new Comparable[list.length - first.length];
+        System.arraycopy(list, 0, first, 0, first.length);
+        System.arraycopy(list, first.length, second, 0, second.length);
+
+        //Sort each half recursively
+        mergeSort(first);
+        mergeSort(second);
+
+        //Merge both halves together, overwriting to original array
+        merge(first, second, list);
+        return list;
+    }
+    private static void merge(Comparable[] first, Comparable[] second, Comparable[] result) {
+        //Index Position in first array - starting with first element
+        int iFirst = 0;
+
+        //Index Position in second array - starting with first element
+        int iSecond = 0;
+
+        //Index Position in merged array - starting with first position
+        int iMerged = 0;
+
+        //Compare elements at iFirst and iSecond,
+        //and move smaller element at iMerged
+        while (iFirst < first.length && iSecond < second.length) {
+            if (first[iFirst].compareTo(second[iSecond]) < 0) {
+                result[iMerged] = first[iFirst];
+                iFirst++;
+            } else {
+                result[iMerged] = second[iSecond];
+                iSecond++;
             }
-            else {
-                if (li >= l.length) {
-                    while (ri < r.length) {
-                        a[i] = r[ri];
-                        i++;
-                        ri++;
-                    }
-                }
-                if (ri >= r.length) {
-                    while (li < l.length) {
-                        a[i] = l[li];
-                        li++;
-                        i++;
-                    }
-                }
-            }
+            iMerged++;
         }
-        //return a;
-
-     System.out.println("Array is "+ Arrays.toString(Array));
+        //copy remaining elements from both halves - each half will have already sorted elements
+        System.arraycopy(first, iFirst, result, iMerged, first.length - iFirst);
+        System.arraycopy(second, iSecond, result, iMerged, second.length - iSecond);
     }
-
 }
 
 
