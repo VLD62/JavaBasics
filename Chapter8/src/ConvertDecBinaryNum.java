@@ -3,7 +3,7 @@
  * Да се напише програма, която преобразува десетично число в двоично.
  */
 import java.util.Scanner;
-public class ConverDecBinaryNum {
+public class ConvertDecBinaryNum {
     public static void main (String [] Args){
         int N;
         Scanner in = new Scanner(System.in);
