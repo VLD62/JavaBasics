@@ -7,7 +7,31 @@ import java.util.Scanner;
  */
 public class ConvertBinaryToHex {
 
-    public static int dec2hex (int N){
+    public static void main (String [] args){
+        int binary, decimal = 0, N, p = 0;
+        String hex;
+        Scanner in  = new Scanner(System.in);
+        System.out.println("Please enter binary number: ");
+        binary = in.nextInt();
+        System.out.println("Entered binary number is " + binary);
+        //Convert binary to decimal
+        while(true){
+            if(binary == 0){
+                break;
+            } else {
+                int temp = binary%10;
+                decimal += temp*Math.pow(2, p);
+                binary = binary/10;
+                p++;
+            }
+        }
+        //Convert decimal to hex
+        hex = dec2hex(decimal);
+        System.out.println("Converted hexadecimal from binary is " + hex +".");
+
+    }
+
+    public static String dec2hex (int N){
     int remainder =0;
     String hex = "";
     char[] hexDigits = {'0', '1', '2', '3', '4', '5', '6',
