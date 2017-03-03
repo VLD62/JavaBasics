@@ -4,4 +4,5 @@
  по схемата на Хорнер.
  */
 public class BinaryToNumbericHorner {
+
 }
