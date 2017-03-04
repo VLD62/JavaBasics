@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 /**
  * Created by vld62 on 3/4/17.
+ * Да се напише програма, която преобразува арабските числа в римски.
  */
 public class ConvertArabicToRoman {
 
