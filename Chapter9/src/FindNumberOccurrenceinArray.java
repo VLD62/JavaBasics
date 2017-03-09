@@ -5,8 +5,14 @@ import java.util.Arrays;
  * Напишете програма, която проверява дали този метод работи правилно.
  */
 public class FindNumberOccurrenceinArray {
-    public static void FindNumberOccurence (int x) {
-
+    public static void FindNumberOccurence (int z, int y[]) {
+        int temp =0;
+        for (int i = 0; i < y.length; i++){
+            if (y[i] == z){
+                temp++;
+            }
+        }
+        System.out.println("Number " + z + " is found " + temp + " times in the array." );
     }
 
     public static void main (String [] Args ){
@@ -23,6 +29,7 @@ public class FindNumberOccurrenceinArray {
             Array[i] = y;
         }
         System.out.println("Entered array is: " + Arrays.toString(Array));
+        FindNumberOccurence(n , Array);
     }
 
 }
