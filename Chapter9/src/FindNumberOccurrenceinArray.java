@@ -5,6 +5,10 @@ import java.util.Arrays;
  * Напишете програма, която проверява дали този метод работи правилно.
  */
 public class FindNumberOccurrenceinArray {
+    public static void FindNumberOccurence (int x) {
+
+    }
+
     public static void main (String [] Args ){
         int n,x,y;
         Scanner in = new Scanner(System.in);
