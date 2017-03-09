@@ -1,7 +1,8 @@
 import java.util.Scanner;
 
 /**
- * Created by viliev on 9.3.2017 г..
+ * Created by viliev on 9.3.2017 г..Създайте метод getMax() с два целочислени (int) параметъра, който връща по-голямото от двете числа.
+ * Напишете програма, която прочита три цели числа от конзолата и отпечатва най-голямото от тях, изпол-звайки метода getMax().
  */
 public class getMaxCompareNumbers {
 
