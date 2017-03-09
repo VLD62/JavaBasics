@@ -14,9 +14,10 @@ public class BinaryToNumericHorner {
             String binary = in.nextLine();
             int length = binary.length();
             int power = length - 1;
+            char ch []  = binary.toCharArray();
 
             for (int i = 0; i < length; i++) {
-                deci += (int) (int.Parse(binary[i].ToString()) * Math.pow(2, power));
+                deci += (int) (Integer.parseInt(Character.toString(ch[i])) * Math.pow(2, power));
                 power--;
             }
 
