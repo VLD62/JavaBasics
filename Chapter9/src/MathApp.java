@@ -64,7 +64,7 @@ public class MathApp {
 
 
                 System.out.println("Array is " + Arrays.toString(Array));
-                System.out.println("Sum of all elements in the array is " + sum);
+                System.out.println("Average of all elements in the array is " + sum/Array.length);
             }
         }
     }
