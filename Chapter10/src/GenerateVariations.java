@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 public class GenerateVariations {
 
-    /public static void generateVariations (int[] array, int index, int start, int end) {
+    public static void generateVariations (int[] array, int index, int start, int end) {
 
         if (index >= array.length) {
             System.out.print("(");
