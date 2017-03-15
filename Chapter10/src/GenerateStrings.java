@@ -14,26 +14,20 @@ import java.util.Scanner;
  */
 public class GenerateStrings {
 
-    public static void generateStrings  (String [] array, int index, int start, int end){
-        if (index >= array.length) {
-            System.out.print("(");
-            for (int i = 0; i < array.length; i++)
-                if (i < array.length - 1) {
-                    System.out.print(array[i] + " ");
-                } else {
-                    System.out.print(array[i]);
-                }
-            System.out.print("), ");
+
+        private static void combination(final int n, final String[] array, final String currentWord) { // example of N = 3
+        if (n == 0) {
+            System.out.print("(" +currentWord + " )");
         } else {
-            for (int i = start; i <= end; i++) {
-                array[] ;
-                generateStrings(array, index + 1, i, end);
+            for (int i = 0; i < array.length; i++) {
+                combination(n - 1, array, currentWord + " " +  array[i] );
             }
         }
     }
 
+
     public static void main (String [] args){
-        int k,N;
+        int N, k;
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter k: ");
         k = in.nextInt();
@@ -45,6 +39,8 @@ public class GenerateStrings {
             Array[i] = in.next();
         }
         System.out.println("Elements of Array are: " + Arrays.toString(Array));
-        generateStrings(Array,k,0,1);
+        combination(k,Array, "");
     }
+
+
 }
