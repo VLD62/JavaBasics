@@ -12,14 +12,32 @@ import java.util.Scanner;
  */
 public class GeneratePermutations {
 
-    public static void generatePermutations (int n) {
-        //Generate array based on input
-        int Array [] = new int[n];
-        for ( int i = 0; i < Array.length; i++) {
-            Array[i] = i+1;
+    public static void generatePermutations (int[] array, int index)
+    {
+        if (index == array.length)
+        {
+            System.out.print("(");
+            for (int i = 0; i < array.length; i++)
+                if (i < array.length - 1) {
+                System.out.print(array[i]+ " ");
+                } else {
+                System.out.print(array[i]);
+                }
+            System.out.print("), ");
         }
-        System.out.println("Elements of Array are: " + Arrays.toString(Array));
-        //Permutations
+        else
+        {
+            for (int i = index; i < array.length; i++)
+            {
+                int temp = array[i];
+                array[i] = array[index];
+                array[index] = temp;
+                generatePermutations(array, index + 1);
+                temp = array[i];
+                array[i] = array[index];
+                array[index] = temp;
+            }
+        }
     }
 
 
@@ -28,6 +46,12 @@ public class GeneratePermutations {
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter number: ");
         n = in.nextInt();
-        generatePermutations(n);
+        //Generate array based on input
+        int Array [] = new int[n];
+        for ( int i = 0; i < Array.length; i++) {
+            Array[i] = i+1;
+        }
+        System.out.println("Elements of Array are: " + Arrays.toString(Array));
+        generatePermutations(Array, 0);
     }
 }
