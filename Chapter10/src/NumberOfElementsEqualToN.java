@@ -30,12 +30,11 @@ public class NumberOfElementsEqualToN {
             if (sumFound) break;
         }
 
-        if (sumFound) for (int i = start; i <= end; i++) System.out.print(" " + Array[i]);
-        else System.out.println("No sum found.");
-        ///
-
-
-
+        if (sumFound) {
+            for (int i = start; i <= end; i++) System.out.print(" " + Array[i]);
+        } else {
+            System.out.println("No sum found.");
+        }
     }
 
     public static void  main (String [] Args){
