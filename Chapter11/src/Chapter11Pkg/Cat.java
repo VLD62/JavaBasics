@@ -21,5 +21,7 @@ public class Cat {
         this.color = color;
     }
 
-
+    public void sayMiau() {
+        System.out.println("Cat " + this.name + " said: Miauuuuuu!" );
+    }
 }
