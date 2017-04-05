@@ -14,16 +14,20 @@ public class ReadFileNameRetrunString {
         filename = "C:\\Users\\viliev\\Desktop"+"\\" + in.nextLine();
         System.out.println("Entered filename is: " + filename);
         File f = new File(filename);
+        StringBuilder str = new StringBuilder();
         try {
             fileScanner = new Scanner(f);
         } catch (FileNotFoundException e) {
             System.out.println("The file does not exists.");
             return;
         }
+        System.out.println("Content of file is");
         while (fileScanner.hasNextLine()) {
             line = fileScanner.nextLine();
             System.out.println(line);
+            str.append(line);
         }
         fileScanner.close();
+        System.out.print("Builded string is: " + str);
     }
 }
