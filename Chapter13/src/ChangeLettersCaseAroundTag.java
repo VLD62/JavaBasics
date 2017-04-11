@@ -10,4 +10,13 @@
  We are living in a YELLOW SUBMARINE. We don't have ANYTHING else.
  */
 public class ChangeLettersCaseAroundTag {
+
+    public static void changeCase (String text) {
+
+    }
+
+    public static void main (String [] args) {
+        String text = "We are living in a <upcase>yellow submarine</upcase>. We don't have <upcase>anything</upcase> else.";
+
+    }
 }
