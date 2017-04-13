@@ -25,7 +25,8 @@ public class ChangeLettersCaseAroundTag {
 
      }*/
      while (index1 != -1 && index2 != -1 ) {
-         System.out.println("Index1 is: " + index1 + " Index2 is: " + index2 + " Text is: " );// + text3);
+
+        System.out.println("Index1 is: " + index1 + " Index2 is: " + index2);
 
 
         String text3 = text.substring(index1 + 8, index2).toUpperCase();
@@ -36,7 +37,7 @@ public class ChangeLettersCaseAroundTag {
         index1 = text.indexOf("<upcase>", index1+1);
         index2 = text.indexOf("</upcase>", index2+1);
 
-        sb.append(newText);
+        //sb.append(newText);
 
 
 
@@ -45,7 +46,7 @@ public class ChangeLettersCaseAroundTag {
     }
 
     public static void main (String [] args) {
-        String text = "We are living in a <upcase>yellow submarine</upcase>. We don't have <upcase>anything</upcase> else. Kozata e nai <upcase>moshnata</upcase> koza. ";
+        String text = "We are living in a <upcase>yellow submarine</upcase>. We don't have <upcase>anything</upcase> else.";
         changeCase(text);
     }
 }
